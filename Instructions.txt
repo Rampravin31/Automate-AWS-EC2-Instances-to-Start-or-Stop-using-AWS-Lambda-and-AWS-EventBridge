@@ -1,0 +1,18 @@
+Instructions:
+
+1. Create a policy for Lambda to start and stop the EC2 instances, and attach it to a role, while creating the Lambada function, we can assume the role.
+2. Create 2 or 3 EC2 instances to perform this project.
+3. Now create the Lamba functions, one for stopping the instance and another for starting the instance.
+4. Make the execution time for the codes 15 seconds. Deploy the codes for both functions.
+5. Now open the Cloud watch events or Event Bridge service.
+6. Use the default bus to create the Rules.
+7. Rule 1 - Stop_EC2_Rule is for stopping the instances, choosing the rule as schedule type and Schedule pattern as CRON expression, and enter the timings in UTC. Add the target as a Lambda program for stopping the instance, tag and review it to create.
+8. Similar way, create  Rule 2 - Start_EC2_Rule is for starting the instances, choose the rule as schedule type and Schedule pattern as CRON expression, and enter the timings in UTC. Add the target as Lambda program for starting the instance.
+9. Now the rules are enabled, check on the event bridge service.
+10. The EC2 instance will automatically stop and restart as per the Rules.
+
+
+
+
+Links: https://bmwitcher.medium.com/using-lambda-cloudwatch-events-to-start-and-stop-ec2-instances-48e31ff0daf2
+https://www.youtube.com/watch?v=11AAt0d59qU&list=PLOQklAxfscAYbeGaEP9B5cu_BFZE6C994&index=3
